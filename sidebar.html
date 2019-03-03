@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+                <title>First Bootstrap Example</title>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        
+        <style>
+            /* sidebar */
+            #sidebar-wrapper{
+                z-index: 1;
+                position: absolute;
+                width: 0;
+                height: 100%;
+                overflow: hidden;
+                background: #2C3E50;
+                border: 2px solid red;
+                opacity: 0.9;
+            }
+
+            /* page-content-wrapper */
+            #page-content-wrapper{
+                width: 100%;
+                position: absolute;
+                padding: 15px;
+                border: 5px solid green;
+            }
+
+            /* change the width of sidebar to display it */
+            #wrapper.menuDisplayed #sidebar-wrapper{
+                width: 250px;
+            }
+
+            #wrapper.menuDisplayed #page-content-wrapper{
+                padding-left: 250px; 
+            }
+             
+            /* Sidebar styling */
+            .sidebar-nav{
+                padding:0;
+                list-style: none;
+            }
+
+            .sidebar-nav li{
+                text-indent: 20px;
+                line-height: 40px;
+            }
+
+            .sidebar-nav li a{
+                display: block;
+                text-decoration: none;
+                color: #ddd;
+            }
+
+            .sidebar-nav li a:hover{
+                background: #16A85;
+            }
+
+        </style>
+</head>
+<body>
+    <div id="wrapper">
+        
+        
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+               <li> <a href="#">Account</a></li>
+                <li><a href="#">Setting</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Main content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="#" class="btn btn-success" id="menu-toggle">Toggle menu</a>
+                        <h1>Sidebar menu</h1>
+                        <p>i love anime i love animei love animei love animei love animei love animei love anime</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    
+
+    <!-- Menu toggle script -->
+    <script>
+        // $("#wrapper").hide();
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("menuDisplayed");
+        });
+    </script>
+</body>
+</html>
